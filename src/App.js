@@ -4,14 +4,16 @@ import './App.css';
 import { Content } from './components/content';
 import { Footer } from './components/footer';
 import { Header } from './components/header';
+import { Read } from './components/read';
+import { Create } from './components/create';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
-import {
-  BrowserRouter as Router,
+
+import { BrowserRouter  as Router,
   Routes,
-  Route
-} from 'react-router-dom';
+  Route }
+  from 'react-router-dom';
 
 //Inherits from react.component designed by react
 //allows us to write components
@@ -30,6 +32,8 @@ class App extends React.Component {
             <Nav className="me-auto">
               {/* Allows us to create links for different components on navbar */}
               <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/content">Content</Nav.Link>
+              <Nav.Link href="/footer">Footer</Nav.Link>
               <Nav.Link href="/read">Read</Nav.Link>
               <Nav.Link href="/create">Create</Nav.Link>
             </Nav>
@@ -40,8 +44,10 @@ class App extends React.Component {
         folder */}
         <Routes>
           <Route path='/' element={<Header />}></Route>
-          <Route path='/read' element={<Content />}></Route>
-          <Route path='/create' element={<Footer />}></Route>
+          <Route path='/content' element={<Content />}></Route>
+          <Route path='/footer' element={<Footer />}></Route>
+          <Route path='/read' element={<Read />}></Route>
+          <Route path='/create' element={<Create />}></Route>
         </Routes>
 
         {/* <Header></Header>
